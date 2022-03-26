@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "1007522942134",
+    "project_id": "sports-trivia-3d4e4",
+    "storage_bucket": "sports-trivia-3d4e4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1007522942134:android:a022924234fca5d69b6a17",
+        "android_client_info": {
+          "package_name": "com.flutterflow.sportstrivia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1007522942134-5ua51r4hnfe59led0rp499tqr8ldepnm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flutterflow.sportstrivia",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "1007522942134-f1ne26cl8jooujttajv7uhp3mcn65f82.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfylJUZv07ptCp7EmFN1U0TU54jy9RoG8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1007522942134-f1ne26cl8jooujttajv7uhp3mcn65f82.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1007522942134-hquc9v6499rjejic6k25g228dib555tg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.flutterflow.sportstrivia"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
