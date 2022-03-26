@@ -4,17 +4,18 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../intro/intro_widget.dart';
+import '../question2/question2_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class TriviaPageCopyWidget extends StatefulWidget {
-  const TriviaPageCopyWidget({Key key}) : super(key: key);
+class Question1Widget extends StatefulWidget {
+  const Question1Widget({Key key}) : super(key: key);
 
   @override
-  _TriviaPageCopyWidgetState createState() => _TriviaPageCopyWidgetState();
+  _Question1WidgetState createState() => _Question1WidgetState();
 }
 
-class _TriviaPageCopyWidgetState extends State<TriviaPageCopyWidget>
+class _Question1WidgetState extends State<Question1Widget>
     with TickerProviderStateMixin {
   final animationsMap = {
     'gridViewOnPageLoadAnimation': AnimationInfo(
@@ -44,8 +45,7 @@ class _TriviaPageCopyWidgetState extends State<TriviaPageCopyWidget>
       this,
     );
 
-    logFirebaseEvent('screen_view',
-        parameters: {'screen_name': 'TriviaPageCopy'});
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'Question1'});
   }
 
   @override
@@ -71,7 +71,7 @@ class _TriviaPageCopyWidgetState extends State<TriviaPageCopyWidget>
             await Navigator.push(
               context,
               PageTransition(
-                type: PageTransitionType.rightToLeft,
+                type: PageTransitionType.leftToRight,
                 duration: Duration(milliseconds: 300),
                 reverseDuration: Duration(milliseconds: 300),
                 child: IntroWidget(),
@@ -133,8 +133,8 @@ class _TriviaPageCopyWidgetState extends State<TriviaPageCopyWidget>
                           context: context,
                           builder: (alertDialogContext) {
                             return AlertDialog(
-                              title: Text('Incorrect :('),
-                              content: Text('Better luck next time!'),
+                              title: Text('Correct!'),
+                              content: Text('Great job!'),
                               actions: [
                                 TextButton(
                                   onPressed: () =>
@@ -145,8 +145,15 @@ class _TriviaPageCopyWidgetState extends State<TriviaPageCopyWidget>
                             );
                           },
                         );
+                        logFirebaseEvent('Button-Navigate-To');
+                        await Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Question2Widget(),
+                          ),
+                        );
                       },
-                      text: '24 inches',
+                      text: '18 inches',
                       options: FFButtonOptions(
                         width: 130,
                         height: 40,
@@ -185,6 +192,13 @@ class _TriviaPageCopyWidgetState extends State<TriviaPageCopyWidget>
                               ],
                             );
                           },
+                        );
+                        logFirebaseEvent('Button-Navigate-To');
+                        await Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Question2Widget(),
+                          ),
                         );
                       },
                       text: '16 inches',
@@ -227,8 +241,15 @@ class _TriviaPageCopyWidgetState extends State<TriviaPageCopyWidget>
                             );
                           },
                         );
+                        logFirebaseEvent('Button-Navigate-To');
+                        await Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Question2Widget(),
+                          ),
+                        );
                       },
-                      text: '12 inches',
+                      text: '24 inches',
                       options: FFButtonOptions(
                         width: 130,
                         height: 40,
@@ -256,8 +277,8 @@ class _TriviaPageCopyWidgetState extends State<TriviaPageCopyWidget>
                           context: context,
                           builder: (alertDialogContext) {
                             return AlertDialog(
-                              title: Text('Correct!'),
-                              content: Text('Great job!'),
+                              title: Text('Incorrect :('),
+                              content: Text('Better luck next time!'),
                               actions: [
                                 TextButton(
                                   onPressed: () =>
@@ -268,8 +289,15 @@ class _TriviaPageCopyWidgetState extends State<TriviaPageCopyWidget>
                             );
                           },
                         );
+                        logFirebaseEvent('Button-Navigate-To');
+                        await Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Question2Widget(),
+                          ),
+                        );
                       },
-                      text: '18 inches',
+                      text: '12 inches',
                       options: FFButtonOptions(
                         width: 130,
                         height: 40,

@@ -7,14 +7,14 @@ import '../intro/intro_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class TriviaPageWidget extends StatefulWidget {
-  const TriviaPageWidget({Key key}) : super(key: key);
+class Question2Widget extends StatefulWidget {
+  const Question2Widget({Key key}) : super(key: key);
 
   @override
-  _TriviaPageWidgetState createState() => _TriviaPageWidgetState();
+  _Question2WidgetState createState() => _Question2WidgetState();
 }
 
-class _TriviaPageWidgetState extends State<TriviaPageWidget>
+class _Question2WidgetState extends State<Question2Widget>
     with TickerProviderStateMixin {
   final animationsMap = {
     'gridViewOnPageLoadAnimation': AnimationInfo(
@@ -44,7 +44,7 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget>
       this,
     );
 
-    logFirebaseEvent('screen_view', parameters: {'screen_name': 'TriviaPage'});
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'Question2'});
   }
 
   @override
@@ -70,7 +70,7 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget>
             await Navigator.push(
               context,
               PageTransition(
-                type: PageTransitionType.rightToLeft,
+                type: PageTransitionType.leftToRight,
                 duration: Duration(milliseconds: 300),
                 reverseDuration: Duration(milliseconds: 300),
                 child: IntroWidget(),
@@ -101,7 +101,7 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget>
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(10, 20, 10, 0),
                 child: Text(
-                  'What’s the diameter of a basketball hoop?',
+                  'What is the only sport that\'s been played on the moon?',
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).title1.override(
                         fontFamily: 'Forma DJR Display',
@@ -132,6 +132,129 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget>
                           context: context,
                           builder: (alertDialogContext) {
                             return AlertDialog(
+                              title: Text('Incorrect :('),
+                              content: Text('Better luck next time!'),
+                              actions: [
+                                TextButton(
+                                  onPressed: () =>
+                                      Navigator.pop(alertDialogContext),
+                                  child: Text('Continue'),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      },
+                      text: 'Lacrosse',
+                      options: FFButtonOptions(
+                        width: 130,
+                        height: 40,
+                        color: FlutterFlowTheme.of(context).primaryColor,
+                        textStyle:
+                            FlutterFlowTheme.of(context).subtitle2.override(
+                                  fontFamily: 'Forma DJR Micro',
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  useGoogleFonts: false,
+                                ),
+                        borderSide: BorderSide(
+                          color: Colors.transparent,
+                          width: 1,
+                        ),
+                        borderRadius: 12,
+                      ),
+                    ),
+                    FFButtonWidget(
+                      onPressed: () async {
+                        logFirebaseEvent('Button-ON_TAP');
+                        logFirebaseEvent('Button-Alert-Dialog');
+                        await showDialog(
+                          context: context,
+                          builder: (alertDialogContext) {
+                            return AlertDialog(
+                              title: Text('Incorrect :('),
+                              content: Text('Better luck next time!'),
+                              actions: [
+                                TextButton(
+                                  onPressed: () =>
+                                      Navigator.pop(alertDialogContext),
+                                  child: Text('Continue'),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      },
+                      text: 'Baseball',
+                      options: FFButtonOptions(
+                        width: 130,
+                        height: 40,
+                        color: FlutterFlowTheme.of(context).primaryColor,
+                        textStyle:
+                            FlutterFlowTheme.of(context).subtitle2.override(
+                                  fontFamily: 'Forma DJR Micro',
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  useGoogleFonts: false,
+                                ),
+                        borderSide: BorderSide(
+                          color: Colors.transparent,
+                          width: 1,
+                        ),
+                        borderRadius: 12,
+                      ),
+                    ),
+                    FFButtonWidget(
+                      onPressed: () async {
+                        logFirebaseEvent('Button-ON_TAP');
+                        logFirebaseEvent('Button-Alert-Dialog');
+                        await showDialog(
+                          context: context,
+                          builder: (alertDialogContext) {
+                            return AlertDialog(
+                              title: Text('Incorrect :('),
+                              content: Text('Better luck next time!'),
+                              actions: [
+                                TextButton(
+                                  onPressed: () =>
+                                      Navigator.pop(alertDialogContext),
+                                  child: Text('Continue'),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      },
+                      text: 'Football',
+                      options: FFButtonOptions(
+                        width: 130,
+                        height: 40,
+                        color: FlutterFlowTheme.of(context).primaryColor,
+                        textStyle:
+                            FlutterFlowTheme.of(context).subtitle2.override(
+                                  fontFamily: 'Forma DJR Micro',
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  useGoogleFonts: false,
+                                ),
+                        borderSide: BorderSide(
+                          color: Colors.transparent,
+                          width: 1,
+                        ),
+                        borderRadius: 12,
+                      ),
+                    ),
+                    FFButtonWidget(
+                      onPressed: () async {
+                        logFirebaseEvent('Button-ON_TAP');
+                        logFirebaseEvent('Button-Alert-Dialog');
+                        await showDialog(
+                          context: context,
+                          builder: (alertDialogContext) {
+                            return AlertDialog(
                               title: Text('Correct!'),
                               content: Text('Great job!'),
                               actions: [
@@ -145,130 +268,7 @@ class _TriviaPageWidgetState extends State<TriviaPageWidget>
                           },
                         );
                       },
-                      text: '18 inches',
-                      options: FFButtonOptions(
-                        width: 130,
-                        height: 40,
-                        color: FlutterFlowTheme.of(context).primaryColor,
-                        textStyle:
-                            FlutterFlowTheme.of(context).subtitle2.override(
-                                  fontFamily: 'Forma DJR Micro',
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  useGoogleFonts: false,
-                                ),
-                        borderSide: BorderSide(
-                          color: Colors.transparent,
-                          width: 1,
-                        ),
-                        borderRadius: 12,
-                      ),
-                    ),
-                    FFButtonWidget(
-                      onPressed: () async {
-                        logFirebaseEvent('Button-ON_TAP');
-                        logFirebaseEvent('Button-Alert-Dialog');
-                        await showDialog(
-                          context: context,
-                          builder: (alertDialogContext) {
-                            return AlertDialog(
-                              title: Text('Incorrect :('),
-                              content: Text('Better luck next time!'),
-                              actions: [
-                                TextButton(
-                                  onPressed: () =>
-                                      Navigator.pop(alertDialogContext),
-                                  child: Text('Continue'),
-                                ),
-                              ],
-                            );
-                          },
-                        );
-                      },
-                      text: '16 inches',
-                      options: FFButtonOptions(
-                        width: 130,
-                        height: 40,
-                        color: FlutterFlowTheme.of(context).primaryColor,
-                        textStyle:
-                            FlutterFlowTheme.of(context).subtitle2.override(
-                                  fontFamily: 'Forma DJR Micro',
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  useGoogleFonts: false,
-                                ),
-                        borderSide: BorderSide(
-                          color: Colors.transparent,
-                          width: 1,
-                        ),
-                        borderRadius: 12,
-                      ),
-                    ),
-                    FFButtonWidget(
-                      onPressed: () async {
-                        logFirebaseEvent('Button-ON_TAP');
-                        logFirebaseEvent('Button-Alert-Dialog');
-                        await showDialog(
-                          context: context,
-                          builder: (alertDialogContext) {
-                            return AlertDialog(
-                              title: Text('Incorrect :('),
-                              content: Text('Better luck next time!'),
-                              actions: [
-                                TextButton(
-                                  onPressed: () =>
-                                      Navigator.pop(alertDialogContext),
-                                  child: Text('Continue'),
-                                ),
-                              ],
-                            );
-                          },
-                        );
-                      },
-                      text: '24 inches',
-                      options: FFButtonOptions(
-                        width: 130,
-                        height: 40,
-                        color: FlutterFlowTheme.of(context).primaryColor,
-                        textStyle:
-                            FlutterFlowTheme.of(context).subtitle2.override(
-                                  fontFamily: 'Forma DJR Micro',
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  useGoogleFonts: false,
-                                ),
-                        borderSide: BorderSide(
-                          color: Colors.transparent,
-                          width: 1,
-                        ),
-                        borderRadius: 12,
-                      ),
-                    ),
-                    FFButtonWidget(
-                      onPressed: () async {
-                        logFirebaseEvent('Button-ON_TAP');
-                        logFirebaseEvent('Button-Alert-Dialog');
-                        await showDialog(
-                          context: context,
-                          builder: (alertDialogContext) {
-                            return AlertDialog(
-                              title: Text('Incorrect :('),
-                              content: Text('Better luck next time!'),
-                              actions: [
-                                TextButton(
-                                  onPressed: () =>
-                                      Navigator.pop(alertDialogContext),
-                                  child: Text('Continue'),
-                                ),
-                              ],
-                            );
-                          },
-                        );
-                      },
-                      text: '12 inches',
+                      text: 'Golf',
                       options: FFButtonOptions(
                         width: 130,
                         height: 40,
