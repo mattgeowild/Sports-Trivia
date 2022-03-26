@@ -6,6 +6,7 @@ import '../flutter_flow/flutter_flow_widgets.dart';
 import '../intro/intro_widget.dart';
 import '../question2/question2_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Question1Widget extends StatefulWidget {
@@ -102,7 +103,7 @@ class _Question1WidgetState extends State<Question1Widget>
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(10, 20, 10, 0),
                 child: Text(
-                  'What’s the diameter of a basketball hoop?',
+                  'What is the diameter of a basketball hoop?',
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).title1.override(
                         fontFamily: 'Forma DJR Display',
@@ -112,213 +113,248 @@ class _Question1WidgetState extends State<Question1Widget>
                       ),
                 ),
               ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(10, 20, 10, 0),
-                child: GridView(
-                  padding: EdgeInsets.zero,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 10,
-                    childAspectRatio: 1,
-                  ),
-                  shrinkWrap: true,
-                  scrollDirection: Axis.vertical,
-                  children: [
-                    FFButtonWidget(
-                      onPressed: () async {
-                        logFirebaseEvent('Button-ON_TAP');
-                        logFirebaseEvent('Button-Alert-Dialog');
-                        await showDialog(
-                          context: context,
-                          builder: (alertDialogContext) {
-                            return AlertDialog(
-                              title: Text('Correct!'),
-                              content: Text('Great job!'),
-                              actions: [
-                                TextButton(
-                                  onPressed: () =>
-                                      Navigator.pop(alertDialogContext),
-                                  child: Text('Continue'),
-                                ),
-                              ],
-                            );
-                          },
-                        );
-                        logFirebaseEvent('Button-Navigate-To');
-                        await Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => Question2Widget(),
-                          ),
-                        );
-                      },
-                      text: '18 inches',
-                      options: FFButtonOptions(
-                        width: 130,
-                        height: 40,
-                        color: FlutterFlowTheme.of(context).primaryColor,
-                        textStyle:
-                            FlutterFlowTheme.of(context).subtitle2.override(
-                                  fontFamily: 'Forma DJR Micro',
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  useGoogleFonts: false,
-                                ),
-                        borderSide: BorderSide(
-                          color: Colors.transparent,
-                          width: 1,
-                        ),
-                        borderRadius: 12,
-                      ),
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(10, 20, 10, 0),
+                  child: GridView(
+                    padding: EdgeInsets.zero,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 10,
+                      childAspectRatio: 0.6,
                     ),
-                    FFButtonWidget(
-                      onPressed: () async {
-                        logFirebaseEvent('Button-ON_TAP');
-                        logFirebaseEvent('Button-Alert-Dialog');
-                        await showDialog(
-                          context: context,
-                          builder: (alertDialogContext) {
-                            return AlertDialog(
-                              title: Text('Incorrect :('),
-                              content: Text('Better luck next time!'),
-                              actions: [
-                                TextButton(
-                                  onPressed: () =>
-                                      Navigator.pop(alertDialogContext),
-                                  child: Text('Continue'),
-                                ),
-                              ],
-                            );
-                          },
-                        );
-                        logFirebaseEvent('Button-Navigate-To');
-                        await Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => Question2Widget(),
+                    shrinkWrap: true,
+                    scrollDirection: Axis.vertical,
+                    children: [
+                      FFButtonWidget(
+                        onPressed: () async {
+                          logFirebaseEvent('Button-ON_TAP');
+                          logFirebaseEvent('Button-Alert-Dialog');
+                          await showDialog(
+                            context: context,
+                            builder: (alertDialogContext) {
+                              return AlertDialog(
+                                title: Text('Correct!'),
+                                content: Text('Great job!'),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () =>
+                                        Navigator.pop(alertDialogContext),
+                                    child: Text('Continue'),
+                                  ),
+                                ],
+                              );
+                            },
+                          );
+                          logFirebaseEvent('Button-Navigate-To');
+                          await Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Question2Widget(),
+                            ),
+                          );
+                        },
+                        text: '18 inches',
+                        options: FFButtonOptions(
+                          width: 130,
+                          height: 40,
+                          color: FlutterFlowTheme.of(context).primaryColor,
+                          textStyle:
+                              FlutterFlowTheme.of(context).subtitle2.override(
+                                    fontFamily: 'Forma DJR Micro',
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                    useGoogleFonts: false,
+                                  ),
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1,
                           ),
-                        );
-                      },
-                      text: '16 inches',
-                      options: FFButtonOptions(
-                        width: 130,
-                        height: 40,
-                        color: FlutterFlowTheme.of(context).primaryColor,
-                        textStyle:
-                            FlutterFlowTheme.of(context).subtitle2.override(
-                                  fontFamily: 'Forma DJR Micro',
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  useGoogleFonts: false,
-                                ),
-                        borderSide: BorderSide(
-                          color: Colors.transparent,
-                          width: 1,
+                          borderRadius: 12,
                         ),
-                        borderRadius: 12,
                       ),
-                    ),
-                    FFButtonWidget(
-                      onPressed: () async {
-                        logFirebaseEvent('Button-ON_TAP');
-                        logFirebaseEvent('Button-Alert-Dialog');
-                        await showDialog(
-                          context: context,
-                          builder: (alertDialogContext) {
-                            return AlertDialog(
-                              title: Text('Incorrect :('),
-                              content: Text('Better luck next time!'),
-                              actions: [
-                                TextButton(
-                                  onPressed: () =>
-                                      Navigator.pop(alertDialogContext),
-                                  child: Text('Continue'),
-                                ),
-                              ],
+                      FFButtonWidget(
+                        onPressed: () async {
+                          logFirebaseEvent('Button-ON_TAP');
+                          logFirebaseEvent('Button-Alert-Dialog');
+                          var confirmDialogResponse = await showDialog<bool>(
+                                context: context,
+                                builder: (alertDialogContext) {
+                                  return AlertDialog(
+                                    title: Text('Incorrect :('),
+                                    content: Text(
+                                        'Would you like to continue or try again?'),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () => Navigator.pop(
+                                            alertDialogContext, false),
+                                        child: Text('Try Again'),
+                                      ),
+                                      TextButton(
+                                        onPressed: () => Navigator.pop(
+                                            alertDialogContext, true),
+                                        child: Text('Continue'),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              ) ??
+                              false;
+                          if (confirmDialogResponse) {
+                            logFirebaseEvent('Button-Navigate-To');
+                            await Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Question2Widget(),
+                              ),
                             );
-                          },
-                        );
-                        logFirebaseEvent('Button-Navigate-To');
-                        await Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => Question2Widget(),
+                          } else {
+                            return;
+                          }
+                        },
+                        text: '16 inches',
+                        options: FFButtonOptions(
+                          width: 130,
+                          height: 40,
+                          color: FlutterFlowTheme.of(context).primaryColor,
+                          textStyle:
+                              FlutterFlowTheme.of(context).subtitle2.override(
+                                    fontFamily: 'Forma DJR Micro',
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                    useGoogleFonts: false,
+                                  ),
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1,
                           ),
-                        );
-                      },
-                      text: '24 inches',
-                      options: FFButtonOptions(
-                        width: 130,
-                        height: 40,
-                        color: FlutterFlowTheme.of(context).primaryColor,
-                        textStyle:
-                            FlutterFlowTheme.of(context).subtitle2.override(
-                                  fontFamily: 'Forma DJR Micro',
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  useGoogleFonts: false,
-                                ),
-                        borderSide: BorderSide(
-                          color: Colors.transparent,
-                          width: 1,
+                          borderRadius: 12,
                         ),
-                        borderRadius: 12,
                       ),
-                    ),
-                    FFButtonWidget(
-                      onPressed: () async {
-                        logFirebaseEvent('Button-ON_TAP');
-                        logFirebaseEvent('Button-Alert-Dialog');
-                        await showDialog(
-                          context: context,
-                          builder: (alertDialogContext) {
-                            return AlertDialog(
-                              title: Text('Incorrect :('),
-                              content: Text('Better luck next time!'),
-                              actions: [
-                                TextButton(
-                                  onPressed: () =>
-                                      Navigator.pop(alertDialogContext),
-                                  child: Text('Continue'),
-                                ),
-                              ],
+                      FFButtonWidget(
+                        onPressed: () async {
+                          logFirebaseEvent('Button-ON_TAP');
+                          logFirebaseEvent('Button-Alert-Dialog');
+                          var confirmDialogResponse = await showDialog<bool>(
+                                context: context,
+                                builder: (alertDialogContext) {
+                                  return AlertDialog(
+                                    title: Text('Incorrect :('),
+                                    content: Text(
+                                        'Would you like to continue or try again?'),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () => Navigator.pop(
+                                            alertDialogContext, false),
+                                        child: Text('Try Again'),
+                                      ),
+                                      TextButton(
+                                        onPressed: () => Navigator.pop(
+                                            alertDialogContext, true),
+                                        child: Text('Continue'),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              ) ??
+                              false;
+                          if (confirmDialogResponse) {
+                            logFirebaseEvent('Button-Navigate-To');
+                            await Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Question2Widget(),
+                              ),
                             );
-                          },
-                        );
-                        logFirebaseEvent('Button-Navigate-To');
-                        await Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => Question2Widget(),
+                          } else {
+                            return;
+                          }
+                        },
+                        text: '24 inches',
+                        options: FFButtonOptions(
+                          width: 130,
+                          height: 40,
+                          color: FlutterFlowTheme.of(context).primaryColor,
+                          textStyle:
+                              FlutterFlowTheme.of(context).subtitle2.override(
+                                    fontFamily: 'Forma DJR Micro',
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                    useGoogleFonts: false,
+                                  ),
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1,
                           ),
-                        );
-                      },
-                      text: '12 inches',
-                      options: FFButtonOptions(
-                        width: 130,
-                        height: 40,
-                        color: FlutterFlowTheme.of(context).primaryColor,
-                        textStyle:
-                            FlutterFlowTheme.of(context).subtitle2.override(
-                                  fontFamily: 'Forma DJR Micro',
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  useGoogleFonts: false,
-                                ),
-                        borderSide: BorderSide(
-                          color: Colors.transparent,
-                          width: 1,
+                          borderRadius: 12,
                         ),
-                        borderRadius: 12,
                       ),
-                    ),
-                  ],
-                ).animated([animationsMap['gridViewOnPageLoadAnimation']]),
+                      FFButtonWidget(
+                        onPressed: () async {
+                          logFirebaseEvent('Button-ON_TAP');
+                          logFirebaseEvent('Button-Alert-Dialog');
+                          var confirmDialogResponse = await showDialog<bool>(
+                                context: context,
+                                builder: (alertDialogContext) {
+                                  return AlertDialog(
+                                    title: Text('Incorrect :('),
+                                    content: Text(
+                                        'Would you like to continue or try again?'),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () => Navigator.pop(
+                                            alertDialogContext, false),
+                                        child: Text('Try Again'),
+                                      ),
+                                      TextButton(
+                                        onPressed: () => Navigator.pop(
+                                            alertDialogContext, true),
+                                        child: Text('Continue'),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              ) ??
+                              false;
+                          if (confirmDialogResponse) {
+                            logFirebaseEvent('Button-Navigate-To');
+                            await Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Question2Widget(),
+                              ),
+                            );
+                          } else {
+                            return;
+                          }
+                        },
+                        text: '12 inches',
+                        options: FFButtonOptions(
+                          width: 130,
+                          height: 40,
+                          color: FlutterFlowTheme.of(context).primaryColor,
+                          textStyle:
+                              FlutterFlowTheme.of(context).subtitle2.override(
+                                    fontFamily: 'Forma DJR Micro',
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                    useGoogleFonts: false,
+                                  ),
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1,
+                          ),
+                          borderRadius: 12,
+                        ),
+                      ),
+                    ],
+                  ).animated([animationsMap['gridViewOnPageLoadAnimation']]),
+                ),
               ),
             ],
           ),

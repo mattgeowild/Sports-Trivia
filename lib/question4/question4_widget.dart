@@ -4,20 +4,19 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../intro/intro_widget.dart';
-import '../question1/question1_widget.dart';
 import '../question3/question3_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Question2Widget extends StatefulWidget {
-  const Question2Widget({Key key}) : super(key: key);
+class Question4Widget extends StatefulWidget {
+  const Question4Widget({Key key}) : super(key: key);
 
   @override
-  _Question2WidgetState createState() => _Question2WidgetState();
+  _Question4WidgetState createState() => _Question4WidgetState();
 }
 
-class _Question2WidgetState extends State<Question2Widget>
+class _Question4WidgetState extends State<Question4Widget>
     with TickerProviderStateMixin {
   final animationsMap = {
     'gridViewOnPageLoadAnimation': AnimationInfo(
@@ -47,7 +46,7 @@ class _Question2WidgetState extends State<Question2Widget>
       this,
     );
 
-    logFirebaseEvent('screen_view', parameters: {'screen_name': 'Question2'});
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'Question4'});
   }
 
   @override
@@ -76,7 +75,7 @@ class _Question2WidgetState extends State<Question2Widget>
                 type: PageTransitionType.leftToRight,
                 duration: Duration(milliseconds: 300),
                 reverseDuration: Duration(milliseconds: 300),
-                child: Question1Widget(),
+                child: Question3Widget(),
               ),
             );
           },
@@ -126,7 +125,7 @@ class _Question2WidgetState extends State<Question2Widget>
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(10, 20, 10, 0),
                 child: Text(
-                  'What is the only sport that\'s been played on the moon?',
+                  'Which African-American was the first to play Major League Baseball?',
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).title1.override(
                         fontFamily: 'Forma DJR Display',
@@ -153,42 +152,24 @@ class _Question2WidgetState extends State<Question2Widget>
                       onPressed: () async {
                         logFirebaseEvent('Button-ON_TAP');
                         logFirebaseEvent('Button-Alert-Dialog');
-                        var confirmDialogResponse = await showDialog<bool>(
-                              context: context,
-                              builder: (alertDialogContext) {
-                                return AlertDialog(
-                                  title: Text('Incorrect :('),
-                                  content: Text(
-                                      'Would you like to continue or try again?'),
-                                  actions: [
-                                    TextButton(
-                                      onPressed: () => Navigator.pop(
-                                          alertDialogContext, false),
-                                      child: Text('Try Again'),
-                                    ),
-                                    TextButton(
-                                      onPressed: () => Navigator.pop(
-                                          alertDialogContext, true),
-                                      child: Text('Continue'),
-                                    ),
-                                  ],
-                                );
-                              },
-                            ) ??
-                            false;
-                        if (confirmDialogResponse) {
-                          logFirebaseEvent('Button-Navigate-To');
-                          await Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Question3Widget(),
-                            ),
-                          );
-                        } else {
-                          return;
-                        }
+                        await showDialog(
+                          context: context,
+                          builder: (alertDialogContext) {
+                            return AlertDialog(
+                              title: Text('Incorrect :('),
+                              content: Text('Better luck next time!'),
+                              actions: [
+                                TextButton(
+                                  onPressed: () =>
+                                      Navigator.pop(alertDialogContext),
+                                  child: Text('Continue'),
+                                ),
+                              ],
+                            );
+                          },
+                        );
                       },
-                      text: 'Lacrosse',
+                      text: 'Monte Irvin',
                       options: FFButtonOptions(
                         width: 130,
                         height: 40,
@@ -212,42 +193,24 @@ class _Question2WidgetState extends State<Question2Widget>
                       onPressed: () async {
                         logFirebaseEvent('Button-ON_TAP');
                         logFirebaseEvent('Button-Alert-Dialog');
-                        var confirmDialogResponse = await showDialog<bool>(
-                              context: context,
-                              builder: (alertDialogContext) {
-                                return AlertDialog(
-                                  title: Text('Incorrect :('),
-                                  content: Text(
-                                      'Would you like to continue or try again?'),
-                                  actions: [
-                                    TextButton(
-                                      onPressed: () => Navigator.pop(
-                                          alertDialogContext, false),
-                                      child: Text('Try Again'),
-                                    ),
-                                    TextButton(
-                                      onPressed: () => Navigator.pop(
-                                          alertDialogContext, true),
-                                      child: Text('Continue'),
-                                    ),
-                                  ],
-                                );
-                              },
-                            ) ??
-                            false;
-                        if (confirmDialogResponse) {
-                          logFirebaseEvent('Button-Navigate-To');
-                          await Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Question3Widget(),
-                            ),
-                          );
-                        } else {
-                          return;
-                        }
+                        await showDialog(
+                          context: context,
+                          builder: (alertDialogContext) {
+                            return AlertDialog(
+                              title: Text('Incorrect :('),
+                              content: Text('Better luck next time!'),
+                              actions: [
+                                TextButton(
+                                  onPressed: () =>
+                                      Navigator.pop(alertDialogContext),
+                                  child: Text('Continue'),
+                                ),
+                              ],
+                            );
+                          },
+                        );
                       },
-                      text: 'Baseball',
+                      text: 'Willard Brown',
                       options: FFButtonOptions(
                         width: 130,
                         height: 40,
@@ -271,42 +234,24 @@ class _Question2WidgetState extends State<Question2Widget>
                       onPressed: () async {
                         logFirebaseEvent('Button-ON_TAP');
                         logFirebaseEvent('Button-Alert-Dialog');
-                        var confirmDialogResponse = await showDialog<bool>(
-                              context: context,
-                              builder: (alertDialogContext) {
-                                return AlertDialog(
-                                  title: Text('Incorrect :('),
-                                  content: Text(
-                                      'Would you like to continue or try again?'),
-                                  actions: [
-                                    TextButton(
-                                      onPressed: () => Navigator.pop(
-                                          alertDialogContext, false),
-                                      child: Text('Try Again'),
-                                    ),
-                                    TextButton(
-                                      onPressed: () => Navigator.pop(
-                                          alertDialogContext, true),
-                                      child: Text('Continue'),
-                                    ),
-                                  ],
-                                );
-                              },
-                            ) ??
-                            false;
-                        if (confirmDialogResponse) {
-                          logFirebaseEvent('Button-Navigate-To');
-                          await Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Question3Widget(),
-                            ),
-                          );
-                        } else {
-                          return;
-                        }
+                        await showDialog(
+                          context: context,
+                          builder: (alertDialogContext) {
+                            return AlertDialog(
+                              title: Text('Incorrect :('),
+                              content: Text('Better luck next time!'),
+                              actions: [
+                                TextButton(
+                                  onPressed: () =>
+                                      Navigator.pop(alertDialogContext),
+                                  child: Text('Continue'),
+                                ),
+                              ],
+                            );
+                          },
+                        );
                       },
-                      text: 'Football',
+                      text: 'Larry Doby',
                       options: FFButtonOptions(
                         width: 130,
                         height: 40,
@@ -347,7 +292,7 @@ class _Question2WidgetState extends State<Question2Widget>
                           },
                         );
                       },
-                      text: 'Golf',
+                      text: 'Jackie Robinson',
                       options: FFButtonOptions(
                         width: 130,
                         height: 40,

@@ -4,6 +4,7 @@ import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../question1/question1_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 
@@ -105,6 +106,22 @@ class _IntroWidgetState extends State<IntroWidget>
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
+      appBar: AppBar(
+        backgroundColor: FlutterFlowTheme.of(context).primaryColor,
+        automaticallyImplyLeading: false,
+        title: Text(
+          'Sports Trivia',
+          style: FlutterFlowTheme.of(context).title2.override(
+                fontFamily: 'Forma DJR Display',
+                color: Colors.white,
+                fontSize: 22,
+                useGoogleFonts: false,
+              ),
+        ),
+        actions: [],
+        centerTitle: true,
+        elevation: 2,
+      ),
       backgroundColor: Color(0xFF1E2429),
       body: Container(
         width: double.infinity,
