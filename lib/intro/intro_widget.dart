@@ -189,10 +189,10 @@ class _IntroWidgetState extends State<IntroWidget>
                 options: FFButtonOptions(
                   width: 130,
                   height: 40,
-                  color: Color(0xFFC63C53),
+                  color: FlutterFlowTheme.of(context).primaryColor,
                   textStyle: FlutterFlowTheme.of(context).subtitle1.override(
                         fontFamily: 'Forma DJR Micro',
-                        color: FlutterFlowTheme.of(context).primaryText,
+                        color: FlutterFlowTheme.of(context).primaryBtnText,
                         fontSize: 15,
                         useGoogleFonts: false,
                       ),

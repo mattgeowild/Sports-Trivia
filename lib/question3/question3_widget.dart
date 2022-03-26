@@ -287,6 +287,13 @@ class _Question3WidgetState extends State<Question3Widget>
                             );
                           },
                         );
+                        logFirebaseEvent('Button-Navigate-To');
+                        await Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Question4Widget(),
+                          ),
+                        );
                       },
                       text: 'LeBron James',
                       options: FFButtonOptions(
